@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaheStudio 论坛</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forum.css">
+    <link rel="icon" href="images/VaheStudio.png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/VaheStudio.png" alt="VaheStudio Logo">
+                <h1>VaheStudio 论坛</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="forum.html" class="active">首页</a></li>
+                    <li><a href="profile.html">个人中心</a></li>
+                    <li><a href="#" id="logoutBtn">退出</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="forum-container">
+            <div class="post-form">
+                <h2>发表新内容</h2>
+                <form id="postForm">
+                    <textarea id="postContent" placeholder="分享你的想法..." required></textarea>
+                    <div class="post-actions">
+                        <label for="fileUpload" class="file-upload-btn">
+                            <input type="file" id="fileUpload" accept="image/*,.pdf,.doc,.docx,.txt" multiple>
+                            添加文件/图片
+                        </label>
+                        <span id="fileInfo"></span>
+                        <button type="submit" class="btn">发布</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="posts-container" id="postsContainer">
+                <!-- 帖子将通过JS动态加载 -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2023 VaheStudio 论坛 - 开源自由平台</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/forum.js"></script>
+</body>
+</html>

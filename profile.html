@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaheStudio 论坛 - 个人中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/VaheStudio.png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/VaheStudio.png" alt="VaheStudio Logo">
+                <h1>VaheStudio 论坛</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="forum.html">首页</a></li>
+                    <li><a href="profile.html" class="active">个人中心</a></li>
+                    <li><a href="#" id="logoutBtn">退出</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="user-info">
+                    <div class="avatar">
+                        <img src="images/default-avatar.png" alt="用户头像" id="userAvatar">
+                    </div>
+                    <h2 id="usernameDisplay"></h2>
+                    <div class="storage-info">
+                        <p>已用空间: <span id="usedStorage">0</span> / 40MB</p>
+                        <div class="storage-bar">
+                            <div class="storage-progress" id="storageProgress"></div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="profile-nav">
+                    <ul>
+                        <li><a href="#" class="active" data-section="my-posts">我的帖子</a></li>
+                        <li><a href="#" data-section="my-files">我的文件</a></li>
+                        <li><a href="#" data-section="account-settings">账户设置</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="profile-content">
+                <section id="my-posts" class="profile-section active">
+                    <h2>我的帖子</h2>
+                    <div class="user-posts" id="userPostsContainer">
+                        <!-- 用户帖子将通过JS动态加载 -->
+                    </div>
+                </section>
+
+                <section id="my-files" class="profile-section">
+                    <h2>我的文件</h2>
+                    <div class="file-upload-area">
+                        <label for="profileFileUpload" class="file-upload-btn">
+                            <input type="file" id="profileFileUpload" multiple>
+                            上传文件
+                        </label>
+                        <p class="file-hint">单个文件不超过10MB，总空间40MB</p>
+                    </div>
+                    <div class="file-list" id="fileListContainer">
+                        <!-- 用户文件将通过JS动态加载 -->
+                    </div>
+                </section>
+
+                <section id="account-settings" class="profile-section">
+                    <h2>账户设置</h2>
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">当前密码</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">新密码</label>
+                            <input type="password" id="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmNewPassword">确认新密码</label>
+                            <input type="password" id="confirmNewPassword" required>
+                        </div>
+                        <button type="submit" class="btn">更改密码</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2023 VaheStudio 论坛 - 开源自由平台</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/filemanager.js"></script>
+</body>
+</html>
